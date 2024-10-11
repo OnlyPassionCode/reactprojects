@@ -38,8 +38,10 @@ function ToDoList(){
 
     const removeLastItem = () => {
         if(items.length > 0){
-            items.pop();
-            setItems(items);
+            setItems(items => {
+                items.pop();
+                return [...items];
+            });
         }
     }
 
